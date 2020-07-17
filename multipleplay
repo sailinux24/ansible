@@ -5,8 +5,8 @@
   tasks:
     - name: latest version of httpd and firewalld installed
       yum:
-name:
-- httpd
+        name:
+          - httpd
           - firewalld
         state: latest
     - name: test html page is installed
