@@ -1,0 +1,16 @@
+#ansible web -m setup
+
+#ansible-playbook va.yaml --syntax-check
+
+#ansible-playbook va.yaml -C                              to do a dry drun
+
+#ansible all -m ping
+
+#ansible localhost -m command -a 'id'
+
+#ansible localhost -m copy -a 'content="Managed by Ansible\n" dest=/etc/motd' -u devops
+
+#ansible localhost -m copy -a 'content="Managed by Ansible\n" dest=/etc/motd' -u devops --become
+
+#ansible all -m command -a 'cat /etc/motd'
+
