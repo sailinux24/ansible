@@ -1,0 +1,5 @@
+---
+- name: used motd
+  hosts: web
+  roles:
+   - role: motd 
