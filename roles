@@ -1,3 +1,54 @@
+
+
+[root@master rolesw]# pwd
+/root/ansible/rolesw
+
+ansible-galaxy init motd
+
+[root@master rolesw]# ls
+mot.yaml  motd
+[root@master rolesw]# cd motd/
+[root@master motd]# ls
+README.md  defaults  files  handlers  meta  mot.yaml  tasks  templates  tests  vars
+[root@master motd]# 
+
+[root@master motd]# cd templates/
+[root@master templates]# cat motd.j2 
+you have logged in to {{ ansible_hostname }}
+this file was created on {{ ansible_date_time.date }}
+
+[root@master templates]# 
+
+[root@master motd]# ls
+README.md  defaults  files  handlers  meta  mot.yaml  tasks  templates  tests  vars
+[root@master motd]# cd tasks/
+[root@master tasks]# cat main.yml 
+---
+- name: copy motd
+  template:
+      src: templates/motd.j2
+      dest: /etc/motd
+      owner: root
+      group: root
+      mode: 044
+
+[root@master tasks]# 
+
+
+
+[root@master rolesw]# pwd
+/root/ansible/rolesw
+[root@master rolesw]# ls
+mot.yaml  motd
+[root@master rolesw]# cd motd/
+[root@master motd]# ls
+README.md  defaults  files  handlers  meta  mot.yaml  tasks  templates  tests  vars
+[root@master motd]# 
+
+[root@master rolesw]# ls              ###make sure a motd locationn placce yaml der and check syntax
+mot.yaml  motd
+
+cat mot.yaml
 ---
 - name: used motd
   hosts: web
