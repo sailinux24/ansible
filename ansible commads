@@ -14,3 +14,7 @@
 
 #ansible all -m command -a 'cat /etc/motd'
 
+#ansible localhost -m setup               ##### to collect the info #####
+
+
+
