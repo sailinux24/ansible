@@ -1,4 +1,5 @@
 
+#ansible localhost -m setup    #####
 
 [root@master rolesw]# pwd
 /root/ansible/rolesw
